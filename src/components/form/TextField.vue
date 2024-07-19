@@ -57,6 +57,6 @@ span {
 }
 
 .highlight {
-  background-color: yellow;
+  background-color: green;
 }
 </style>
