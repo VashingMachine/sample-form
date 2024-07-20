@@ -1,0 +1,43 @@
+name: Build, Test, and Deploy Vue App
+
+on:
+  push:
+    branches:
+      - main # Runs on push events to the main branch
+  pull_request:
+    branches:
+      - main # Runs on pull requests to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout code
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Set this to your node version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint with ESLint
+        run: npm run lint
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Build the app for production
+        run: |
+          npm run build
+          zip -r dist.zip dist
+          echo "Release v${{ github.run_number }}" > Release.txt
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            Release.txt
+            dist.zip
