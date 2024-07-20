@@ -1,6 +1,6 @@
 # sample-form
 
-This sample application serves as a interview task. I am sending this task through zip package, but the entire codebase is on my private repository. I have even created pipeline for building and testing this project.
+This sample application serves as a interview task.
 
 ## Requirements
 
