@@ -9,7 +9,7 @@ const { addTextField, removeTextField } = useFormStore()
 </script>
 
 <template>
-  <TextField class="search" v-model="search" />
+  <TextField class="search" v-model="search" :highlight="Object.keys(highlighted).length > 0" />
   <div class="container">
     <div>
       <TextField
@@ -22,8 +22,8 @@ const { addTextField, removeTextField } = useFormStore()
         @delete-field="removeTextField(textField.id)"
       />
     </div>
+    <button class="add" v-if="textFields.length < 10" @click="addTextField">Add Text Field</button>
   </div>
-  <button v-if="textFields.length <= 10" @click="addTextField">Add Text Field</button>
 </template>
 
 <style scoped>
@@ -34,12 +34,17 @@ const { addTextField, removeTextField } = useFormStore()
 
 .search {
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .search::before {
   content: '🔍';
   font-size: 30px;
   margin-left: 10px;
+}
+
+button {
+  margin: 10px 0px 0px 10px;
+  padding: 5px 10px;
 }
 </style>

@@ -32,7 +32,7 @@ const vowelsCount = computed(() => {
   <div>
     <input :class="props.highlight && 'highlight'" type="text" v-model="model" />
     <span v-if="props.countVowels"> {{ vowelsCount }}</span>
-    <button v-if="props.allowDeletion" @click="$emit('delete-field')">Delete</button>
+    <button class="delete" v-if="props.allowDeletion" @click="$emit('delete-field')">Delete</button>
   </div>
 </template>
 
