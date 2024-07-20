@@ -1,18 +1,10 @@
 # sample-form
 
-This template should help get you started developing with Vue 3 in Vite.
+This sample application serves as a interview task. I am sending this task through zip package, but the entire codebase is on my private repository. I have even created pipeline for building and testing this project.
 
-## Recommended IDE Setup
+## Requirements
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+The app was build with Node.js 20.x and npm 10.7.x. It should work with older versions as well.
 
 ## Project Setup
 
